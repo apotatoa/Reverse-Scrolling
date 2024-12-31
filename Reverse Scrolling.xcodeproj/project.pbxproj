@@ -29,16 +29,6 @@
 		A369732D2D1BE6BF00349F00 /* Reverse ScrollingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reverse ScrollingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A36973432D1BEAC500349F00 /* Exceptions for "Reverse ScrollingUITests" folder in "Reverse ScrollingUITests" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Reverse-ScrollingUITests-Info.plist",
-			);
-			target = A369732C2D1BE6BF00349F00 /* Reverse ScrollingUITests */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A36973142D1BE6BD00349F00 /* Reverse Scrolling */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -52,9 +42,6 @@
 		};
 		A36973302D1BE6BF00349F00 /* Reverse ScrollingUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A36973432D1BEAC500349F00 /* Exceptions for "Reverse ScrollingUITests" folder in "Reverse ScrollingUITests" target */,
-			);
 			path = "Reverse ScrollingUITests";
 			sourceTree = "<group>";
 		};
@@ -405,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Reverse Scrolling/Reverse_Scrolling.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -433,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_ENTITLEMENTS = "Reverse Scrolling/Reverse_Scrolling.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
