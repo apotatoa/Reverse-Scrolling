@@ -29,6 +29,16 @@
 		A369732D2D1BE6BF00349F00 /* Reverse ScrollingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reverse ScrollingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A36973432D1BEAC500349F00 /* Exceptions for "Reverse ScrollingUITests" folder in "Reverse ScrollingUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Reverse-ScrollingUITests-Info.plist",
+			);
+			target = A369732C2D1BE6BF00349F00 /* Reverse ScrollingUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A36973142D1BE6BD00349F00 /* Reverse Scrolling */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -42,6 +52,9 @@
 		};
 		A36973302D1BE6BF00349F00 /* Reverse ScrollingUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A36973432D1BEAC500349F00 /* Exceptions for "Reverse ScrollingUITests" folder in "Reverse ScrollingUITests" target */,
+			);
 			path = "Reverse ScrollingUITests";
 			sourceTree = "<group>";
 		};
@@ -399,6 +412,7 @@
 				DEVELOPMENT_TEAM = R23P4NUBHA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Reverse-Scrolling-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -426,6 +440,7 @@
 				DEVELOPMENT_TEAM = R23P4NUBHA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Reverse-Scrolling-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -484,6 +499,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R23P4NUBHA;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Reverse-ScrollingUITests-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sky.Reverse-ScrollingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,6 +517,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R23P4NUBHA;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Reverse-ScrollingUITests-Info.plist";
+				INFOPLIST_KEY_LSUIElement = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sky.Reverse-ScrollingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
