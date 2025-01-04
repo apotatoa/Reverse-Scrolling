@@ -32,12 +32,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             callback: { proxy, type, event, refcon in
                 guard type == .scrollWheel else { return Unmanaged.passUnretained(event) }
 
-                let isContinuous = event.getIntegerValueField(.scrollWheelEventIsContinuous) == 1
-                if !isContinuous { // Mouse scroll
-                    let deltaX = -event.getDoubleValueField(.scrollWheelEventDeltaAxis1)
-                    let deltaY = -event.getDoubleValueField(.scrollWheelEventDeltaAxis2)
-                    event.setDoubleValueField(.scrollWheelEventDeltaAxis1, value: deltaX)
-                    event.setDoubleValueField(.scrollWheelEventDeltaAxis2, value: deltaY)
+                // Check if the Shift key is pressed
+                let shiftPressed = event.flags.contains(.maskShift)
+
+                // Reverse scroll direction only for non-shift events
+                if !shiftPressed {
+                    let isContinuous = event.getIntegerValueField(.scrollWheelEventIsContinuous) == 1
+                    if !isContinuous { // Mouse scroll
+                        let deltaX = -event.getDoubleValueField(.scrollWheelEventDeltaAxis1)
+                        let deltaY = -event.getDoubleValueField(.scrollWheelEventDeltaAxis2)
+                        event.setDoubleValueField(.scrollWheelEventDeltaAxis1, value: deltaX)
+                        event.setDoubleValueField(.scrollWheelEventDeltaAxis2, value: deltaY)
+                    }
                 }
                 return Unmanaged.passUnretained(event)
             },
