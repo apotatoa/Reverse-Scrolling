@@ -19,11 +19,11 @@ This is a simple macOS menu bar app that reverses the scrolling direction for mo
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/your-repo.git
-   cd your-repo
+   git clone https://github.com/apotatoa/Reverse-Scrolling.git
+   cd Reverse-Scrolling
    ```
 2. Open the project in Xcode.
-3. Ensure the `Reverse-Scrolling-Info.plist` file is present in the repository. This file is required for the app to build and run.
+3. The`Reverse-Scrolling-Info.plist` file should be generated as you build. This file is required for the app to build and run.
 4. Build and run the project in Xcode.
 
 ## How It Works
@@ -79,5 +79,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Author
 
-Created by [Your Name].
+Created by Luke S.
 
