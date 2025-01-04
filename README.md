@@ -12,7 +12,7 @@ This is a simple macOS menu bar app that reverses the scrolling direction for mo
 ## Requirements
 
 - macOS 15.1 (Sequoia) or later.
-- Swift 5.9 or later.
+- Swift 5 or later.
 - Xcode for building and running the project.
 
 ## Installation
