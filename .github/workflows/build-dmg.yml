@@ -1,5 +1,8 @@
 name: Build macOS DMG
 
+permissions: 
+  contents: write
+
 on:
   push:
     branches: [ "main" ]
@@ -68,4 +71,5 @@ jobs:
         with:
           files: ReverseScrolling.dmg
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+
