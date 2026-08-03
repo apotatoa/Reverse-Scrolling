@@ -1,0 +1,71 @@
+name: Build macOS DMG
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ] # Automatically triggers on release tags (e.g., v1.0.0)
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+
+      - name: Build App
+        run: |
+          xcodebuild build \
+            -scheme "Reverse Scrolling" \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Install create-dmg
+        run: brew install create-dmg
+
+      - name: Create DMG Installer
+        run: |
+          APP_PATH="build/Build/Products/Release/Reverse Scrolling.app"
+          
+          # Create stylish DMG with drag-and-drop link to Applications
+          create-dmg \
+            --volname "Reverse Scrolling Installer" \
+            --window-pos 200 120 \
+            --window-size 600 400 \
+            --icon-size 100 \
+            --icon "Reverse Scrolling.app" 175 190 \
+            --hide-extension "Reverse Scrolling.app" \
+            --app-drop-link 425 190 \
+            "ReverseScrolling.dmg" \
+            "$APP_PATH" || true
+          
+          # Fallback to hdiutil if create-dmg fails
+          if [ ! -f "ReverseScrolling.dmg" ]; then
+            echo "create-dmg failed, falling back to hdiutil..."
+            mkdir dmg_temp
+            cp -R "$APP_PATH" dmg_temp/
+            ln -s /Applications dmg_temp/Applications
+            hdiutil create -volname "Reverse Scrolling" -srcfolder dmg_temp -ov -format UDZO ReverseScrolling.dmg
+          fi
+
+      - name: Upload DMG Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ReverseScrolling-DMG
+          path: ReverseScrolling.dmg
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ReverseScrolling.dmg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
